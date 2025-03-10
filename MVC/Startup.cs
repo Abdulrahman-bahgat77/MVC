@@ -30,16 +30,16 @@ namespace MVC
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles(); //get bootstrp files(css,js)
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
+                //add new route
                 endpoints.MapGet("/index", async context =>
                 {
                     await context.Response.WriteAsync("Hello");
@@ -47,7 +47,7 @@ namespace MVC
 
                 endpoints.MapControllerRoute(
                     name: "Default",
-                    pattern: "{Controller=Movies}/{action=Index}/{id:int?}"); //Id is option
+                    pattern: "{Controller=Home}/{action=Index}/{id:int?}"); //Id is option
 
                 //defaults: new { action = "Index" },
                 //constraints: new { id =new IntRouteConstraint()}  old option

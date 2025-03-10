@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    @*Start header*@
+    <nav class="mt-5">
+        <center>
+            @* Html Tag *@
+           @*  <a class="btn btn-danger" href="/Home/Index">Home</a> *@
+
+           @* Html Helper *@
+           @*  <a>@Html.ActionLink("Home","index","Home",null,new{@class="btn btn-primary"}) </a> *@
+
+            @*Html Tah Helper*@
+           <a class="btn btn-danger" asp-controller="Home" asp-action="Index" >Home</a>
+
+            <a class="btn btn-primary" asp-controller="Home" asp-action="AboutUs">AboutUs</a>
+
+            <a class="btn btn-secondary" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+            <a class="btn btn-success" asp-controller="Home" asp-action="Contactus">Contactus</a>
+
+            <a class="btn btn-info" asp-controller="Account" asp-action="Login">Login</a>
+
+            <a class="btn btn-dark" asp-controller="Account" asp-action="Register">Register</a>
+        </center>
+
+    </nav>
+
+    @*End header*@
+    <div>
+        @RenderBody()
+    </div>
+
+    @*Start Footer*@
+    <footer class="mt-5">
+        <center>
+            <div>
+                <p>
+                    copyRights &copy; @DateTime.Now.Year
+                </p>
+            </div>
+        </center>
+    </footer>
+    @*End Footer*@
+</body>
+</html>
